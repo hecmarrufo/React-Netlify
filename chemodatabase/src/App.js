@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import logo from './logo.svg'; 
 import './App.css';
+import Select from 'react-select';
 
 function App() {
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ];
+  const industria_list = [
+    { value: 'alimentaria', label: 'Alimentaria' },
+    { value: 'otros', label: 'Otros' },
+  ]
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          hola soy un menú
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body>
+        <Select 
+          placeholder={'Industria'}
+          options={industria_list} 
+        />
+        <Select 
+          placeholder={'Solución'}
+          options={options} 
+        />
+        <Select 
+          placeholder={'Propiedad Termodinámica'}
+          options={options} 
+        />
+      </body>
     </div>
   );
 }
